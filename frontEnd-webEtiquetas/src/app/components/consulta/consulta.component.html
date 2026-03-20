@@ -8,6 +8,31 @@
     </div>
     <button type="submit" class="submit-button">CONSULTAR</button>
 </form>
+
+<div class="table">
+    <table class="tabela-consultas" *ngIf="consultas && !consultaBoolean">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Fabricante</th>
+                <th>Descrição</th>
+                <th>Modelo</th>
+                <th>Disponível</th>
+                <th>Locação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let consulta of consultas">
+                <td><strong>{{ consulta.codinterno }}</strong></td>
+                <td>{{ consulta.codfor }}</td>
+                <td>{{ consulta.descr }}</td>
+                <td>{{ consulta.modelo }}</td>
+                <td>{{ consulta.disponivel }}</td>
+                <td><strong>{{ consulta.tloc }}</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <div class="result-container" *ngIf="consulta">
     <h3 class="result-title">Detalhes da Consulta</h3>
     <hr>

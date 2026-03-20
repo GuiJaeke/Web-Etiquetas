@@ -47,3 +47,35 @@
     justify-content: start;
     margin-bottom: 0.5em;
 }
+
+.tabela-consultas {
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 20px;
+    margin: 2em 5em;
+    border-radius: 8px;
+    box-shadow: 0 0.5em 1.2em black;
+  }
+  
+  .tabela-consultas th, .tabela-consultas td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona "..." caso o texto seja muito longo */
+  }
+  
+  .tabela-consultas thead {
+    background-color: #4e9ffc;
+    font-weight: bold;
+  }
+  
+  .tabela-consultas tr:nth-child(even) {
+    background-color: #e7f2ff;
+  }
+  
+  .tabela-consultas tr:hover {
+    background-color: #72b3fd;
+  }
+  

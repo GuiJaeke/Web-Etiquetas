@@ -15,6 +15,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ConsultaComponent {
   itemForm!: FormGroup
   consulta!: Consulta
+  consultas!: Consulta[]
+  consultaBoolean!: boolean
   erro: string = ''
   @ViewChild('meuInput') inputRef!: ElementRef;
 
@@ -28,12 +30,12 @@ export class ConsultaComponent {
     this.etqService.consulta(this.itemForm.value.codigo, this.itemForm.value.filtro).subscribe((Item) => {
       if (Item) {
         console.log(Item)
-        this.consulta = Item
+        this.consultas = Item
         this.inputRef.nativeElement.focus();
         this.inputRef.nativeElement.select();
       } else {
         let snackBarRef = this.snackBar.open(`Item não encontrado`, 'Fechar', { duration: 3000 });
-        this.consulta = Item
+        this.consultas = []
       }
     }
     )

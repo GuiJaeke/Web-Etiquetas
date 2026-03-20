@@ -84,7 +84,7 @@ export class EtiquetasService {
 
   //Consulta
   consulta(codigo: string, filtro: boolean) {
-    return this.http.get<Consulta>(`${this.apiUrl}/unique/consulta/${codigo}/${filtro}`)
+    return this.http.get<Consulta[]>(`${this.apiUrl}/unique/consulta/${codigo}/${filtro}`)
   }
   //fim
 
