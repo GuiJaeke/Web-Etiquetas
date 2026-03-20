@@ -1,0 +1,49 @@
+<form *ngIf="volume" [formGroup]="qtdForm" (ngSubmit)="printETQ()" class="formETQ">
+    <div class="divETQ">
+        <input type="number" class="intervalETQ" formControlName="qtdInicial" id="">
+        <p>/</p>
+        <input type="number" class="intervalETQ"  formControlName="qtdVolume" id="" [placeholder]="volume.QTD">
+        <button type="submit" class="print-button" [disabled]="disabledButton"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="print"></mat-icon></button>
+    </div>
+    <br>
+    <div class="divETQcheck">
+
+        <input type="checkbox" class="checkbox" formControlName="unicaETQ" [(ngModel)]="unique" id=""
+            (change)="onCheckboxChange()">
+        <h3>Imprimir somente essa etiqueta.</h3>
+    </div>
+    <br>
+    <div>
+        <form class="divETQcheck">
+            <input type="checkbox" class="checkbox" [(ngModel)]="interval" name="interval" id=""
+                (change)="onCheckboxChange()">
+            <h3>Imprimir determinado intervalo de etiquetas</h3>
+        </form>
+    </div>
+    <div *ngIf="interval" class="divETQ" style="border: 1px solid black; margin-top: 10px; padding: 5px;">
+        <input type="number" class="intervalETQ" formControlName="qtdInicial" id="">
+        <p>/</p>
+        <input type="number" class="intervalETQ"  formControlName="qtdVolume" id="" [placeholder]="volume.QTD">
+        <h3>ATÉ</h3>
+        <input type="number" class="intervalETQ" formControlName="qtdFinal" id="">
+        <p>/</p>
+        <h2 *ngIf="!this.qtdForm.value.qtdVolume">{{volume.QTD}}</h2>
+        <h2>{{this.qtdForm.value.qtdVolume}}</h2>
+        <button type="submit" class="print-button">IMPRIMIR</button>
+    </div>
+</form>
+<form [formGroup]="volumeForm" (ngSubmit)="onSubmit()" class="form-container">
+    <input type="text" mask="000000" class="input-field" formControlName="numped" placeholder="Número do Pedido" id="" (keyup)="onKeyup()">
+    <button type="submit" class="submit-button">PREENCHER</button>
+</form>
+
+<div *ngIf="volume" class="result-container">
+    <h1 style="margin-top: 3rem;">{{volume.NOME}}</h1>
+    <h1 style="font-size: 170px;">{{volume.numped}}</h1>
+    <h1 class="date">{{data | date: "dd/MM/yyyy"}} </h1>
+    <h1>{{volume.TRANSPORTADORA}}</h1>
+    <h1>{{volume.SIGLA}} - {{volume.CIDADE}}</h1>
+    <h1 style=" margin-left: 15rem; font-size: 40px; font-weight: bold; margin-top: 2rem;">Volume &nbsp; &nbsp;
+        1/{{volume.QTD}}</h1>
+</div>
+

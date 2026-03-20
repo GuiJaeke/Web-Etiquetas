@@ -1,0 +1,12 @@
+<form [formGroup]="codForm" (ngSubmit)="print()" class="form-container">
+    <label for="numped">Código do item</label>
+    <input type="text" class="input-field" formControlName="codigo" id="" >
+    <label for="qtd">Insira a quantidade de etiquetas</label>
+    <input type="number" class="input-field" formControlName="qtd" id="" >
+    <button type="submit" class="submit-button">IMPRIMIR</button>
+</form>
+<div class="result-container" style="align-content: center; justify-content: center;">
+    <h1>LAMPADA FAROL H4 35/35W TITAN 125-</h1>
+    <img src="/img/code.webp" alt="" width="550px" style="margin-left: 5rem;">
+    <h1 style="margin-left: 19rem; font-size: 2.5rem;">070005</h1>
+</div>

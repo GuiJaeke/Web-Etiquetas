@@ -1,0 +1,13 @@
+# Etapa 1: Construir a aplicação Angular
+# Usamos uma imagem oficial do Node.js como a imagem base
+FROM node:20
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+RUN npm run build
+
+CMD ["npm", "run", "prod"]

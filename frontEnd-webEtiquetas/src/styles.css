@@ -1,0 +1,209 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 1rem 0;
+    font-family: Arial, sans-serif;
+    border-bottom: 3px solid #0004ff;
+    min-width: fit-content;
+}
+
+/* Estilos para os links do menu */
+.menu-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    margin: 0 0.2em;
+    font-size: 80%;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito de hover para os links */
+.menu-link:hover {
+    background-color: #0004ff;
+    color: white;
+}
+
+/* Estilo para o link ativo (quando a página está ativa) */
+.menu-link.active {
+    background-color: #0004ff;
+    color: white;
+}
+
+/* Estilos para um layout responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-link {
+        padding: 12px 30px;
+        margin: 5px 0;
+    }
+}
+.form-container {
+    width: 100%;
+    max-width: 25rem;
+    margin: 0em auto;
+    background-color: white;
+    padding: 1em;
+    border: 1px solid grey;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    
+}
+
+
+/* Estilos do formulário */
+
+label {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+.formETQ {
+    width: 34rem;
+    max-width: 47.5em;
+    margin: 0.8em auto;
+    background-color: white;
+    padding: 1em;
+    border: 1px solid grey;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+.divETQ {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.checkbox{
+    width: 2.5em;
+}
+.formETQ p {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.inputETQ {
+    width: 4rem;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 2em;
+    text-align: center;
+}
+.intervalETQ {
+    width: 4rem;
+    padding: 0.2em;
+    margin-bottom: 0.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 2em;
+    text-align: center;
+}
+.print-button {
+    padding: 0.5em;
+    height: 4rem;
+    background-color: #0a009c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    font-weight: bold;
+}
+.print-button:hover {
+    background-color: #002fff;
+}
+h3 {
+    font-size: 1.2em;
+}
+.input-field {
+    width: 95%;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 100%;
+    font-size: 2em;
+    text-align: center;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 0.5em;
+    background-color: #0a009c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background-color: #002fff;
+}
+
+.date {
+        transform: rotate(270deg); /* Rotaciona o texto 90 graus */
+        position: absolute;
+        top:45rem;
+        left: 72.2rem;
+        transform-origin: center center;
+}
+
+.result-container {
+    font-family: sans-serif;
+    width: 47rem;
+    height: 31.33rem;
+    margin: 1em auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.result-container h1 {
+    margin-left: 4rem;
+    font-size: 1.95em;
+    color: #000000;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+/* Adicionando espaçamento entre os itens */
+.result-container h1 + h1 {
+    margin-top: 15px;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+snack-bar-container .mat-button-wrapper {
+    font-weight: bold;
+    color: #ff00ea;
+}
+
+.mdc-button__label{
+    color: rgb(255, 51, 51);
+    font-size: larger;
+    font-weight: bold;
+}

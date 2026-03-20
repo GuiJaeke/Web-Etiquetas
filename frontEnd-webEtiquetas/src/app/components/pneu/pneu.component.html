@@ -1,0 +1,60 @@
+<form *ngIf="volume" [formGroup]="qtdForm" (ngSubmit)="printETQ()" class="formETQ">
+    <div class="divETQ">
+        <input type="number" class="intervalETQ"  formControlName="qtdInicial" id="">
+        <p>/</p>
+        <input type="number" class="intervalETQ"  formControlName="qtdVolume" id="" [placeholder]="volume.QTD">
+        <button type="submit" class="print-button" id="printButton" [disabled]="disabledButton"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="print"></mat-icon></button>
+    </div>
+    <div class="divETQcheck">
+
+        <input type="checkbox" class="checkbox" formControlName="unicaETQ" [(ngModel)]="unique" id=""
+            (change)="onCheckboxChange()">
+        <h3>Imprimir somente essa etiqueta</h3>
+    </div>
+    <br>
+    <div>
+        <form class="divETQcheck">
+            <input type="checkbox" class="checkbox" [(ngModel)]="interval" name="interval" id=""
+                (change)="onCheckboxChange()">
+            <h3>Imprimir determinado intervalo de etiquetas</h3>
+        </form>
+    </div>
+    
+    <div *ngIf="interval" class="divETQ" style="border: 1px solid black; margin-top: 10px; padding: 5px;">
+        <input type="number" class="intervalETQ" formControlName="qtdInicial" id="">
+        <p>/</p>
+        <input type="number" class="intervalETQ"  formControlName="qtdVolume" id="" [placeholder]="volume.QTD">
+        <h3>ATÉ</h3>
+        <input type="number" class="intervalETQ" formControlName="qtdFinal" id="">
+        <p>/</p>
+        <h2 *ngIf="!this.qtdForm.value.qtdVolume">{{volume.QTD}}</h2>
+        <h2>{{this.qtdForm.value.qtdVolume}}</h2>
+        <button type="submit" class="print-button">IMPRIMIR</button>
+    </div>
+</form>
+<form [formGroup]="volumeForm" (ngSubmit)="onSubmit()" class="form-container">
+    <h1 style="text-align: center;">Etiqueta de Pneu</h1>
+    <hr>
+    <br>
+    <input type="text" mask="000000" class="input-field" placeholder="Número do Pedido" formControlName="numped" id="" (keyup)="onKeyup()">
+    <button type="submit" class="submit-button">PREENCHER</button>
+</form>
+
+<div *ngIf="volume" class="result-containerPneu">
+        <img src="/img/Logo.png" alt="" width="80rem" height="375rem" >
+   
+    <div class="pedInfo">
+
+        <h1 style="margin-top: 2rem; margin-left: 2.5em;">{{volume.NOME}}</h1>
+        <h1 style="font-size: 140px; margin-top: -0.1em;">{{volume.numped}}</h1>
+        <h1 style="margin-top: -0.1em; margin-left: 2.5em;">{{volume.TRANSPORTADORA}}</h1>
+        <h1 style="margin-top: -0.1em; margin-left: 2.8em;">{{volume.SIGLA}} - {{volume.CIDADE}}</h1>
+        <h1 style="font-size: 40px; font-weight: bold; margin-top: 1rem;">Volume &nbsp; &nbsp;</h1>
+        <h1 style="font-size: 90px; margin-top: -0.6em; margin-left: 4em;">1/{{volume.QTD}}</h1>
+        </div>
+    <div class="redes">
+        <h1 class="spin" >{{data | date: "dd/MM/yyyy"}} </h1>
+        <p class="spin" style="font-size: 24px;">Siga nossas redes sociais:</p>
+        <h3 class="spin">&#64;montannadistribuidora</h3>
+    </div>
+</div>

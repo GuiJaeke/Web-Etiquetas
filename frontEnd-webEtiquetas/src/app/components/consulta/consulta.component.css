@@ -1,0 +1,49 @@
+.result-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.result-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-label {
+    font-weight: bold;
+    color: #444;
+    font-size: 22px;
+}
+
+.result-value {
+    color: #007bff;
+    font-size: 22px;
+    font-weight: bold;
+}
+.divETQcheck{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-bottom: 0.5em;
+}

@@ -1,0 +1,8 @@
+<form [formGroup]="qtdForm" class="form-container" (ngSubmit)="onSubmit()">
+    <input type="number" formControlName="qtd" class="inputETQ" min="1">
+    <button type="submit" class="print-button">IMPRIMIR</button>
+</form>
+<div class="result-container" style="padding-left: 0; border: 3px solid black;">
+    <h1 class="cuidado">CUIDADO</h1>
+    <H1 style="margin-top: 5rem; font-size: 140px;">FRÁGIL</H1>
+</div>

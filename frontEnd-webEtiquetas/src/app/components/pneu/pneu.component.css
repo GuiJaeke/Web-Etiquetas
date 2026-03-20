@@ -1,0 +1,38 @@
+.result-containerPneu{
+    font-family: sans-serif;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    overflow: hidden;
+    width: 54.83333rem;
+    height: 23.5rem;
+    display: flex;
+    flex-direction: row;
+}
+.spin {
+    transform: rotate(270deg);
+    white-space: nowrap;
+    position: absolute;
+}
+.redes{
+    margin-top: 13rem;
+}
+.pedInfo {
+    margin-left: 1.7em;
+    width: 69%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.divETQcheck{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+mat-icon {
+    width: 1em;
+    height: 1em;
+    font-size: 3em;
+    
+}

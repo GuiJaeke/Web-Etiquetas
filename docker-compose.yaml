@@ -1,0 +1,29 @@
+version: '3.9'
+
+networks:
+  application_network:
+    driver: bridge
+
+services:
+  frontend-webetiquetas:
+    build: 
+      context: ./frontend-webetiquetas
+    ports:
+      - "4208:4208"  # Porta exposta pelo Nginx
+    depends_on:
+      - backend-webetiquetas # O frontend depende do backend para rodar
+    volumes:
+      - ./dist:/usr/share/nginx/html   
+    environment:
+      - TZ=America/Sao_Paulo
+    networks:
+      - application_network
+
+  backend-webetiquetas:
+    build: ./backend-webetiquetas
+    ports:
+      - "8088:8088"  # Porta exposta pela API Express
+    environment:
+      - TZ=America/Sao_Paulo
+    networks:
+      - application_network

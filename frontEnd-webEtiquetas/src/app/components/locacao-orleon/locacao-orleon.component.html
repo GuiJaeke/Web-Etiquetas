@@ -1,0 +1,43 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="form-container">
+    <label for="numped">Código do item</label>
+    <input type="text" class="input-field" formControlName="codigo" id="codigo" (keyup)="onKeyup()">
+    <label for="locacao">Locação</label>
+    <input type="text" class="input-field" mask="A-00-00" formControlName="locacao" id="" >
+    <button type="submit"  class="submit-button">PREENCHER</button>
+    
+</form>
+<div *ngIf="item" class="divETQ">
+    <button type="submit" (click)="print()" id="print-button" class="print-button">IMPRIMIR</button>
+</div>
+<h1>{{erro}}</h1>
+<div *ngIf="item" class="result-container" style="padding-top: 2.4em; padding-left: 1.3em;">
+    <div class="row">
+        <h2 style="align-self: flex-start; font-weight: bolder;">CÓDIGO:</h2>
+       <h1 style="font-size: 90px; align-self: center;"> {{item.codinterno}}</h1>
+       <div class="codBarras">
+        <img src="/img/code.webp" alt="" width="180px" height="40px">
+        <h2>{{item.codinterno}}</h2>
+       </div>
+    </div>
+    <div class="row">
+        <h2>PRODUTO </h2>
+        <h2 >: {{item.Produto}}</h2>
+    </div>
+    <div class="row">   
+        <h2>MODELO </h2>     
+        <h2>: {{item.modelo}}</h2>
+    </div>
+    <div class="row">
+        <h2>FORNECEDOR </h2>
+        <h2>: {{item.NOME}}</h2>
+    </div>
+    <div class="row" style=" margin-top: 5em;">
+        <h2>LOCAL FÍSICO: </h2>
+        <h1 style="font-size: 80px;letter-spacing: 8px; ">{{this.itemForm.value.locacao | slice:0:1 }}-{{ this.itemForm.value.locacao | slice:1:3 }}-{{ this.itemForm.value.locacao | slice:3:5 }}</h1>
+        
+        <div class="codBarras" style="margin-left: 2.5em;">
+            <img src="/img/code.webp" alt="" width="180px" height="40px">
+            <h2 >{{this.itemForm.value.locacao | slice:0:1 }}-{{ this.itemForm.value.locacao | slice:1:3 }}-{{ this.itemForm.value.locacao | slice:3:5 }}</h2>
+        </div>
+    </div>
+</div>

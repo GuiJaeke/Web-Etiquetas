@@ -1,0 +1,19 @@
+.print-button {
+    margin-left: 2.5rem;
+}
+.form-container {
+    width: 15rem;
+    display: flex;
+    flex-direction: row;
+}
+h1 {
+    font-size: 110px;
+    margin-left: 0;
+    text-align: center;
+    justify-content: center;
+}
+.cuidado {
+    text-align: center;
+    border: 3px solid black;
+    padding: 1px;
+}

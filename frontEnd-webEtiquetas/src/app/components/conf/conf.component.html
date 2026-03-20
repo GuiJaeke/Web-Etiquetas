@@ -1,0 +1,16 @@
+<form [formGroup]="volumeForm" class="form-container" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <label for="pedido">Pedido: </label>
+        <input type="text" formControlName="pedido" class="input-field">
+        <br>
+        <label for="pag">Página: </label>
+        <input type="number" formControlName="pagina" class="inputETQ">
+    </div>
+    <label for="conferente">Conferente: </label>
+    <input type="text" formControlName="conferente" class="input-field">
+    <div class="row">
+        <label for="qtd">Qtd. Vol.</label>
+        <input type="text" formControlName="qtd" class="inputETQ">
+        <button type="submit" class="print-button">IMPRIMIR</button>
+    </div>
+</form>

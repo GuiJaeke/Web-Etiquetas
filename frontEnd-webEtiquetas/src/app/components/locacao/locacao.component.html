@@ -1,0 +1,44 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="form-container">
+    <label for="numped">Código do item e a Filial</label>
+    <input type="text" class="input-field" formControlName="codigo" id="codigo" (keyup)="onKeyup()">
+    <input type="number" class="input-field" formControlName="filial" id="" >
+    <button type="submit"  class="submit-button">PREENCHER</button>
+    
+</form>
+<div *ngIf="item" class="divETQ">
+    <button type="submit" (click)="print()" id="print-button" class="print-button">IMPRIMIR</button>
+</div>
+<h1>{{erro}}</h1>
+<div *ngIf="item" class="result-container" style="padding: 5px;">
+    <div class="row">
+        <h3 style="align-self: center;">CÓDIGO</h3>
+       <h1 style="font-size: 110px;">{{item.codinterno}}</h1>
+       <div class="codBarras">
+        <img src="/img/code.webp" alt="" width="200px" height="120px">
+        <h3 >{{item.codinterno}}</h3>
+       </div>
+    </div>
+    <div class="row">
+        <h3>PRODUTO</h3>
+        <h1 style="font-size: 30px;">{{item.Produto}}</h1>
+    </div>
+    <div class="row">   
+        <h3>MODELO</h3>     
+        <h1><strong>{{item.modelo}} </strong></h1>
+        <H3 style="margin-left: 10em;">CÓD. FABR</H3>
+        <h1 >{{item.CODPROFABRICANTE}}</h1>
+    </div>
+    <div class="row">
+        <h3>FORNECEDOR</h3>
+        <h1>{{item.NOME}}</h1>
+    </div>
+    <div class="row">
+        <h3>LOCAL FÍSICO</h3>
+        <h1 style="font-size: 90px;">{{item.descr}}</h1>
+        
+        <div class="codBarras" style="margin-left: 9em;">
+            <img src="/img/code.webp" alt="" width="200px" height="120px">
+            <h3>{{item.clasloc}}</h3>
+        </div>
+    </div>
+</div>

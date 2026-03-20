@@ -1,0 +1,38 @@
+
+            CT~~CD,~CC^~CT~
+            ^XA
+            ~TA000
+            ~JSN
+            ^LT0
+            ^MNW
+            ^MTD
+            ^PON
+            ^PMN
+            ^LH0,0
+            ^JMA
+            ^PR4,4
+            ~SD15
+            ^JUS
+            ^LRN
+            ^CI27
+            ^PA0,1,1,0
+            ^XZ
+            ^XA
+            ^MMT
+            ^PW831
+            ^LL1239
+            ^LS0
+            ^FT151,1148^A0B,45,79^FH\^CI28^FDCODIGO:^FS^CI27
+            ^BY4,3,59^FT195,351^BCB,,Y,N
+            ^FH\^FD>;7183>66^FS
+            ^FT227,857^A0B,149,150^FH\^CI28^FD071836           ^FS^CI27
+            ^FT343,1148^A0B,42,38^FH\^CI28^FDPRODUTO: CORRENTE 530 X 102L CB 400/ 450 (H ^FS^CI27
+            ^FT677,1148^A0B,34,41^FH\^CI28^FDLOCAL FISICO:^FS^CI27
+            ^BY5,3,57^FT706,351^BCB,,Y,N
+            ^FH\^FD>;A-05-01^FS
+            ^FT419,1148^A0B,35,38^FH\^CI28^FDMODELO: MAXX PREMIUM                                                                                                                                                                                                                                                  ^FS^CI27
+            ^FT496,1148^A0B,41,38^FH\^CI28^FDFORNECEDOR: RAY ACESSORIOS LTDA^FS^CI27
+            ^FT718,893^A0B,127,109^FH\^CI28^FDA-05-01^FS^CI27
+            ^PQ1,0,1,Y
+            ^XZ
+            

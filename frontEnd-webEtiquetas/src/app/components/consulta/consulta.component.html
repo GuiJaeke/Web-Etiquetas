@@ -1,0 +1,44 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="form-container">
+    <label for="numped">Código do Item</label>
+    <input type="text" class="input-field" formControlName="codigo" #meuInput (keyup)="onKeyup()" placeholder="070005">
+    <div class="divETQcheck">
+
+        <input type="checkbox" class="checkbox" formControlName="filtro" id="">
+        <h3>Filtrar somente Código Interno</h3>
+    </div>
+    <button type="submit" class="submit-button">CONSULTAR</button>
+</form>
+<div class="result-container" *ngIf="consulta">
+    <h3 class="result-title">Detalhes da Consulta</h3>
+    <hr>
+    <div class="result-item">
+        <span class="result-label">Código Interno:</span>
+        <span class="result-value">{{consulta.CODINTERNO}}</span>
+    </div>
+    <hr>
+    <div class="result-item">
+        <span class="result-label">Código do Fabricante:</span>
+        <span class="result-value">{{consulta.CODPROFABRICANTE}}</span>
+    </div>
+    <hr>
+    <div class="result-item">
+        <span class="result-label">Descrição:</span>
+        <span class="result-value">{{consulta.DESCR}}</span>
+    </div>
+    <hr>
+    <div class="result-item">
+        <span class="result-label">Modelo:</span>
+        <span class="result-value">{{consulta.MODELO}}</span>
+    </div>
+    <hr>
+    <div class="result-item">
+        <span class="result-label">Disponível:</span>
+        <span class="result-value">{{consulta.DISPONIVEL}}</span>
+    </div>
+    <hr>
+    <div class="result-item">
+        <span class="result-label">Locação:</span>
+        <span class="result-value">{{consulta.LOCACAO}}</span>
+    </div>
+    <hr>
+</div>

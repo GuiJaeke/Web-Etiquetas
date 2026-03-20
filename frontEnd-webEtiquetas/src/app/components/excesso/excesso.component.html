@@ -1,0 +1,15 @@
+<form [formGroup]="excessoForm" class="form-container" (keyup)="onKeyUp()" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="word" id="loc" class="inputETQ" style="width: 80px;">
+    <select formControlName="select" id="" class="inputETQ">
+        <option *ngFor="let loc of locacao" [value]="loc.loc" >{{loc.loc}}</option>
+    </select>
+    <div *ngIf="!locacao"><h4>Digite uma letra ou a locação acima</h4></div>
+    <button type="submit" class="submit-button">IMPRIMIR</button>
+</form>
+<div class="result-container" *ngIf="this.excessoForm.value.select">
+    <h1>EXCESSO</h1>
+    <h1 style="margin-bottom: 6rem;">{{this.excessoForm.value.select}}</h1>
+    <img src="/img/code.webp" alt="" width="330px" height="80px" >
+    <h3>21001</h3>
+    <h3 style="align-self: flex-end;">{{date | date: "dd/MM/yyyy HH:mm"}}</h3>
+</div>

@@ -1,0 +1,5 @@
+DB_SERVER='192.168.3.???'
+DB_USER=usuario
+DB_PASSWORD=senha
+DB_DATABASE=BDExemplo
+DB_PORT=0000

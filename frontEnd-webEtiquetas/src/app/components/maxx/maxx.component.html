@@ -1,0 +1,10 @@
+<form [formGroup]="codForm" (ngSubmit)="print()" class="form-container">
+    <label for="numped">Código do item</label>
+    <input type="text" class="input-field" formControlName="codigo" id="" >
+    <label for="qtd">Insira a quantidade de etiquetas</label>
+    <input type="number" class="input-field" formControlName="qtd" id="" >
+    <button type="submit" class="submit-button">IMPRIMIR</button>
+</form>
+<div class="result-container" style="align-content: center;">
+    <img src="/img/maxxbr.png" alt="" style="margin-left: 12rem;" width="350px">
+</div>
