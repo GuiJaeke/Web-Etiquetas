@@ -6,10 +6,10 @@ const sequelizeBditens = new Sequelize('bditens', 'root', '', {
   dialect: 'mysql',
 });
 
-async function buscarItens(codint) {
+async function buscarItens(codint, limit) {
     const item = (await sequelizeBditens.query(`SELECT PRODUTO.codinterno, PRODUTO.descricao as descr, PRODUTO.modelo, PRODUTO.codfabricante
         as codfor, produto.locfisica as tloc, produto.qnt as disponivel from PRODUTO PRODUTO
-        WHERE PRODUTO.codinterno = ${codint} or PRODUTO.codfabricante = ${codint}`))[0][0];
+        WHERE PRODUTO.codinterno LIKE '${codint}%' or PRODUTO.codfabricante LIKE '${codint}%' ${limit}`))[0];
     if (item == undefined) {
         console.log(item)
     } else {

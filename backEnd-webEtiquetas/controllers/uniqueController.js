@@ -243,12 +243,19 @@ module.exports = class uniqueController {
     }
     static async consulta(req, res) {
         const { codigo, filtro } = req.params
-        console.log(filtro);
+        let limit = 'limit 10'
+        
+        if (codigo.length == 6) {
+            limit = 'limit 1'
+        }
+        if (codigo.length == 0) {
+            return res.json(undefined)
+        }
         if(filtro == 'true') {
-            const produto = await buscarItens(codigo)
+            const produto = await buscarItens(codigo, limit)
             return res.json(produto)
         } else {
-            const produto = await buscarItens(codigo)
+            const produto = await buscarItens(codigo, limit)
             return res.json(produto)
         }
         
