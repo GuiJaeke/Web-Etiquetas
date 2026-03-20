@@ -248,8 +248,7 @@ module.exports = class uniqueController {
             const produto = await buscarItens(codigo)
             return res.json(produto)
         } else {
-            const produto = (await sequelize.query(`Select top 1 CPF.CODPROFABRICANTE, A.codpro , A.CODINTERNO , A.DESCR, A.MODELO, B.estestrate AS QUANTIDADE, B.qtdereserv AS RESERVADO, B.quantrma AS RMA,     CONVERT(DECIMAL(10,0),(B.QUANT - B.qtdereserv )) AS DISPONIVEL, ISNULL(T.descr,'SEM LOCAÇÃO') AS LOCACAO     FROM PRODUTOCAD A  LEFT JOIN ITEMFILEST B      ON A.codpro =B.codpro AND B.filial='60'  LEFT JOIN PRODUTOLOCALFILIAL P  ON A.codpro=P.CODPRO AND P.FILIAL='60'  LEFT JOIN TABLOCACAD T     ON P.CLASLOC=T.clasloc  LEFT JOIN PRODREFCAD R      ON A.codpro=R.codpro INNER JOIN COMPLEMENTOPRODUTO CPF   
-               ON A.CODPRO = CPF.CODPRO WHERE A.CODINTERNO='${codigo}' OR R.referencia ='${codigo}'`))[0][0]
+            const produto = await buscarItens(codigo)
             return res.json(produto)
         }
         

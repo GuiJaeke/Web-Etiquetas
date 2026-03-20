@@ -27,6 +27,7 @@ export class ConsultaComponent {
   onSubmit() {
     this.etqService.consulta(this.itemForm.value.codigo, this.itemForm.value.filtro).subscribe((Item) => {
       if (Item) {
+        console.log(Item)
         this.consulta = Item
         this.inputRef.nativeElement.focus();
         this.inputRef.nativeElement.select();

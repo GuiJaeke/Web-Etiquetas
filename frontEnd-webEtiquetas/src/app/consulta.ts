@@ -1,12 +1,12 @@
 export interface Consulta {
-    CODPROFABRICANTE: string
+    codfor: string
     codpro: string
-    CODINTERNO: string
-    DESCR: string
-    MODELO: string
+    codinterno: string
+    descr: string
+    modelo: string
     QUANTIDADE: number
     RESERVADO: number
     RMA: number
     DISPONIVEL: number
-    LOCACAO: string
+    tloc: string
 }
