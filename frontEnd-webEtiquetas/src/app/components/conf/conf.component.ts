@@ -32,7 +32,6 @@ export class ConfComponent {
       conferente: [],
       qtd: []
     })
-    this.catchConferentes()
     this.setor = this.setorService.OnInit()
   }
   catchConferentes() {
