@@ -5,26 +5,12 @@ const { exec } = require('child_process');
 const path = require('path');
 const moment = require('moment')
 const getSetor = require('../utils/getSetor')
+const buscarItens = require('../utils/buscarItens')
 
 module.exports = class locacaoController {
     static async FindItem(req, res) {
         const { codigo, filial } = req.params
-        const Item = (await sequelize.query(`SELECT 
-        PRD.codinterno,
-        PRD.descr as Produto,
-        PRD.modelo,
-        SUBSTRING(FORN.NOME,1,32) as NOME,
-        TABL.descr,
-        '0'+ TABL.clasloc as clasloc,  
-        CPL.CODPROFABRICANTE   
-        FROM PRODUTOCAD PRD,TABLOCACAD TABL,PRODUTOLOCALFILIAL PRDL,FORNECEDOR_R FORN,COMPLEMENTOPRODUTO CPL
-        WHERE
-        PRD.codinterno = '${codigo}' AND 
-        PRD.codpro=PRDL.CODPRO AND 
-        PRDL.CLASLOC=TABL.clasloc AND 
-        PRD.codfor=FORN.OID AND 
-        PRDL.FILIAL= '60' AND
-        PRD.codpro=CPL.CODPRO`))[0][0]
+        const Item = await buscarItens(codigo)
 
         res.json(Item)
     }
@@ -119,11 +105,10 @@ module.exports = class locacaoController {
             const pastaAnterior = path.join(__dirname, '..');
             const caminhoDoArquivo = path.join(pastaAnterior, 'ETIQUETA_LOCACAO.prn');
 
-            // Agora utilizando o await no exec
             const comando = `copy ${caminhoDoArquivo} ${printer}`;
 
             try {
-                const resultado = await execPromise(comando);  // Usando exec com await
+                const resultado = await execPromise(comando);
                 console.log('Arquivo enviado para a impressora com sucesso:', resultado);
             } catch (err) {
                 console.error('Erro ao executar o comando:', err);
