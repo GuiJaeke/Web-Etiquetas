@@ -3,7 +3,8 @@ const { exec } = require('child_process');
 const path = require('path');
 const sequelize = require('../bd/conn');
 const getSetor = require('../utils/getSetor');
-const buscarItens = require('../utils/buscarItens');
+const {buscarItens} = require('../utils/buscarItens');
+const {buscarItensDescr} = require('../utils/buscarItens');
 
 module.exports = class uniqueController {
     static async fragilETQ(req, res) {
@@ -259,6 +260,15 @@ module.exports = class uniqueController {
             return res.json(produto)
         }
         
+    }
+    static async consultaDescr(req, res) {
+        const {descr} = req.body       
+        if (descr.length == 0) {
+            return res.json(undefined)
+        }
+        const produtos = await buscarItensDescr(descr)
+        return res.json(produtos)
+
     }
     static async codbarras(req, res) {
         const { codigo, qtd } = req.params

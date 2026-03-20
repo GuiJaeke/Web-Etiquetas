@@ -10,6 +10,7 @@ router.get('/maxxbr/:codigo/:qtd/:setor', uniqueController.maxxbr)
 router.get('/lado/:qtd/:setor', uniqueController.ladoETQ)
 router.get('/correio/:qtd/:setor', uniqueController.correioETQ)
 router.get('/consulta/:codigo/:filtro', uniqueController.consulta)
+router.put('/consultaDescr', uniqueController.consultaDescr)
 router.get('/conf', uniqueController.findConferentes)
 router.get('/conf/:pedido/:pag/:conferente/:qtd/:setor', uniqueController.printConf)
 

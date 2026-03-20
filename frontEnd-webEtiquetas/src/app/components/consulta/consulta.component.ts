@@ -14,16 +14,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ConsultaComponent {
   itemForm!: FormGroup
+  descrForm!: FormGroup
   consulta!: Consulta
   consultas!: Consulta[]
   consultaBoolean!: boolean
   erro: string = ''
   @ViewChild('meuInput') inputRef!: ElementRef;
+  @ViewChild('meuInputDescr') descrRef!: ElementRef;
 
   constructor(private fb: FormBuilder, private etqService: EtiquetasService, private snackBar: MatSnackBar) {
     this.itemForm = this.fb.group({
       codigo: [],
       filtro: []
+    })
+    this.descrForm = this.fb.group({
+      descr: []
     })
   }
   onSubmit() {
@@ -31,8 +36,10 @@ export class ConsultaComponent {
       if (Item) {
         console.log(Item)
         this.consultas = Item
-        this.inputRef.nativeElement.focus();
-        this.inputRef.nativeElement.select();
+        setTimeout(() => {
+          this.inputRef.nativeElement.focus();
+          this.inputRef.nativeElement.select();
+        }, 3000);
       } else {
         let snackBarRef = this.snackBar.open(`Item não encontrado`, 'Fechar', { duration: 3000 });
         this.consultas = []
@@ -40,9 +47,25 @@ export class ConsultaComponent {
     }
     )
   }
+  onSubmitDescr() {
+    this.etqService.consultaDescr(this.descrForm.value.descr).subscribe((Items) => {
+      if (Items) {
+        this.consultas = Items
+        this.descrRef.nativeElement.focus();       
+      } else {
+        this.consultas = Items
+      }
+    }
+    )
+  }
   onKeyup() {
-    if (this.itemForm.value.codigo.length == 6) {
+    if (this.itemForm.value.codigo.length >= 1) {
       this.onSubmit()
+    }
+  }
+  onKeyupDescr() {
+    if (this.descrForm.value.descr.length >= 1 || this.descrForm.value.descr.length < 1) {
+      this.onSubmitDescr()
     }
   }
 }

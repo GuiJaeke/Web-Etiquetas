@@ -86,6 +86,13 @@ export class EtiquetasService {
   consulta(codigo: string, filtro: boolean) {
     return this.http.get<Consulta[]>(`${this.apiUrl}/unique/consulta/${codigo}/${filtro}`)
   }
+  consultaDescr(descr: string) {
+    console.log(descr);
+    
+    return this.http.put<Consulta[]>(`${this.apiUrl}/unique/consultaDescr`, {descr: descr}, {
+      headers: { 'Content-Type': 'application/json' }
+    })
+  }
   //fim
 
   //etiqueta segurança

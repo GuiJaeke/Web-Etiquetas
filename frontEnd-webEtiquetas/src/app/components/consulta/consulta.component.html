@@ -1,14 +1,24 @@
-<form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="form-container">
-    <label for="numped">Código do Item</label>
-    <input type="text" class="input-field" formControlName="codigo" #meuInput (keyup)="onKeyup()" placeholder="070005">
-    <div class="divETQcheck">
+<div class="rowDescr">
+    <form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="form-container">
+        <label for="numped" style="font-size: 20px;"><p style="text-align: center;">Pesquisar por cód. interno e fabricante</p></label>
+        <br>
+        <div class="divETQcheck">
 
-        <input type="checkbox" class="checkbox" formControlName="filtro" id="">
-        <h3>Filtrar somente Código Interno</h3>
-    </div>
-    <button type="submit" class="submit-button">CONSULTAR</button>
-</form>
-
+            <input type="checkbox" class="checkbox" formControlName="filtro" id="">
+            <h3>Filtrar somente Código Interno</h3>
+        </div>
+        <input type="text" class="input-field" formControlName="codigo" #meuInput (keyup)="onKeyup()"
+            placeholder="070005">
+        <hr>
+        <br>
+        <form [formGroup]="descrForm" (ngSubmit)="onSubmitDescr()">
+            <label for="numped" style="font-size: 24px;"><p style="text-align: center;">Pesquisar pela descrição</p></label>
+            <br>
+            <input type="text" class="input-field" formControlName="descr" #meuInputDescr (keyup)="onKeyupDescr()"
+                placeholder="PNEU 100/80-18 MA...">
+        </form>
+    </form>
+</div>
 <div class="table">
     <table class="tabela-consultas" *ngIf="consultas && !consultaBoolean">
         <thead>
@@ -32,38 +42,4 @@
             </tr>
         </tbody>
     </table>
-</div>
-<div class="result-container" *ngIf="consulta">
-    <h3 class="result-title">Detalhes da Consulta</h3>
-    <hr>
-    <div class="result-item">
-        <span class="result-label">Código Interno:</span>
-        <span class="result-value">{{consulta.codinterno}}</span>
-    </div>
-    <hr>
-    <div class="result-item">
-        <span class="result-label">Código do Fabricante:</span>
-        <span class="result-value">{{consulta.codfor}}</span>
-    </div>
-    <hr>
-    <div class="result-item">
-        <span class="result-label">Descrição:</span>
-        <span class="result-value">{{consulta.descr}}</span>
-    </div>
-    <hr>
-    <div class="result-item">
-        <span class="result-label">Modelo:</span>
-        <span class="result-value">{{consulta.modelo}}</span>
-    </div>
-    <hr>
-    <div class="result-item">
-        <span class="result-label">Disponível:</span>
-        <span class="result-value">{{consulta.disponivel}}</span>
-    </div>
-    <hr>
-    <div class="result-item">
-        <span class="result-label">Locação:</span>
-        <span class="result-value">{{consulta.tloc}}</span>
-    </div>
-    <hr>
 </div>

@@ -41,13 +41,25 @@
     font-size: 22px;
     font-weight: bold;
 }
+.form-container {
+    box-shadow: 0 0.5em 1.2em black;
+}
 .divETQcheck{
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: center;
     margin-bottom: 0.5em;
 }
-
+.rowDescr {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    width: 50em;
+    max-height: 50em;
+    justify-content: center;
+    margin: 10px auto;
+    margin-bottom: 30px;
+}
 .tabela-consultas {
     width: 90%;
     border-collapse: collapse;

@@ -18,5 +18,17 @@ async function buscarItens(codint, limit) {
         return(item)
     }
 }
+async function buscarItensDescr(descr) {
+    const item = (await sequelizeBditens.query(`SELECT PRODUTO.codinterno, PRODUTO.descricao as descr, PRODUTO.modelo, PRODUTO.codfabricante
+        as codfor, produto.locfisica as tloc, produto.qnt as disponivel from PRODUTO PRODUTO
+        WHERE PRODUTO.descricao LIKE '%${descr}%' LIMIT 10`))[0];
+    if (item == undefined) {
+        console.log(item)
+    } else {
+        console.log(item);
+        
+        return(item)
+    }
+}
 
-module.exports = buscarItens;
+module.exports = { buscarItens, buscarItensDescr };
