@@ -8,7 +8,7 @@ const sequelizeBditens = new Sequelize('bditens', 'root', '', {
 
 async function buscarItens(codint) {
     const item = (await sequelizeBditens.query(`SELECT PRODUTO.codinterno, PRODUTO.descricao as descr, PRODUTO.modelo, PRODUTO.codfabricante
-        as codfor, produto.locfisica as tloc from PRODUTO PRODUTO
+        as codfor, produto.locfisica as tloc, produto.qnt as disponivel from PRODUTO PRODUTO
         WHERE PRODUTO.codinterno = ${codint} or PRODUTO.codfabricante = ${codint}`))[0][0];
     if (item == undefined) {
         console.log(item)

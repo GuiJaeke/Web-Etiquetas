@@ -7,6 +7,6 @@ export interface Consulta {
     QUANTIDADE: number
     RESERVADO: number
     RMA: number
-    DISPONIVEL: number
+    disponivel: number
     tloc: string
 }
