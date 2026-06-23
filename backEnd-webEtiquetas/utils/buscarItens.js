@@ -31,7 +31,7 @@ async function buscarItensDescr(descr) {
     }
 }
 async function buscarPedido(numped) {
-    const pedido = (await sequelizeBditens.query(`SELECT * FROM PEDIDO WHERE numped = ${numped}`))[0];
+    const pedido = (await sequelizeBditens.query(`SELECT * FROM PEDIDO WHERE numped = ${numped}`))[0][0];
     if (pedido == undefined) {
         console.log(pedido)
     } else {

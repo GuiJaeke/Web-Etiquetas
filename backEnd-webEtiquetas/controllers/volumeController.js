@@ -5,32 +5,12 @@ const { exec } = require('child_process');
 const path = require('path');
 const moment = require('moment')
 const getSetor = require('../utils/getSetor')
+const buscarPedido = require('../utils/buscarItens').buscarPedido
 
 module.exports = class volumeController {
     static async findPed(req, res) {
         const numped = req.params.numped
-        const pedido = (await sequelize.query(
-            `SELECT TOP 1 PED.numped,
-            CLIR.NOME,
-            PED.endercli AS RUA,
-            PED.NumClie AS NUMERO, 
-            PED.cepcli AS CEP, 
-            PED.bairrcli AS BAIRRO, 
-            PED.CIDADCLI AS  CIDADE, 
-            PED.estcli AS SIGLA, 
-            CASE WHEN (SELECT CARV.QTDEVOLUME FROM CARVOLUPEDIDO CARV 
-            WHERE  CARV.NumPed=PED.numped )IS NULL  THEN 0  ELSE (SELECT CARV.QTDEVOLUME FROM CARVOLUPEDIDO CARV 
-            WHERE  CARV.NumPed=PED.numped )END  AS QTD, (SELECT TABT.NOME FROM TABTRANFAT TABT 
-            WHERE  TABT.codtran=PED.codtran) AS TRANSPORTADORA 
-            FROM PEDICLICAD PED, CLIENTE_R CLIR,  
-            ENDERECO_R ENDR,  CIDADE_R CIDR, 
-            PROVINCIA_R PRVR  
-            WHERE  PED.codclie=CLIR.OID  
-            AND PED.codclie=ENDR.RITEM  
-            AND ENDR.RCIDADE=CIDR.OID  
-            AND PRVR.OID=CIDR.RPROVINCIA  
-            AND PED.numped=${numped}`
-        ))[0][0]
+        const pedido = await buscarPedido(numped)
         res.json(pedido)
     }
     static async ETQ(req, res) {
