@@ -30,5 +30,14 @@ async function buscarItensDescr(descr) {
         return(item)
     }
 }
+async function buscarPedido(numped) {
+    const pedido = (await sequelizeBditens.query(`SELECT * FROM PEDIDO WHERE numped = ${numped}`))[0];
+    if (pedido == undefined) {
+        console.log(pedido)
+    } else {
+        console.log(pedido);   
+        return(pedido)
+    }
+}
 
-module.exports = { buscarItens, buscarItensDescr };
+module.exports = { buscarItens, buscarItensDescr, buscarPedido };
