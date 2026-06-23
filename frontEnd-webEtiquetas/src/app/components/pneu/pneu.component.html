@@ -41,20 +41,20 @@
 </form>
 
 <div *ngIf="volume" class="result-containerPneu">
-        <img src="/img/Logo.png" alt="" width="80rem" height="375rem" >
+        <img src="/img/jaeke.png" alt="" width="80rem" height="375rem" style="background-color: black;">
    
     <div class="pedInfo">
 
         <h1 style="margin-top: 2rem; margin-left: 2.5em;">{{volume.NOME}}</h1>
         <h1 style="font-size: 140px; margin-top: -0.1em;">{{volume.numped}}</h1>
-        <h1 style="margin-top: -0.1em; margin-left: 2.5em;">{{volume.TRANSPORTADORA}}</h1>
-        <h1 style="margin-top: -0.1em; margin-left: 2.8em;">{{volume.SIGLA}} - {{volume.CIDADE}}</h1>
+        <h1 style="margin-top: -0.1em; margin-left: 2.5em;">{{volume.RUA}}, {{volume.NUMERO}}</h1>
+        <h1 style="margin-top: -0.1em; margin-left: 2.8em;">{{volume.BAIRRO}}, {{volume.CIDADE}}-{{volume.SIGLA}}</h1>
         <h1 style="font-size: 40px; font-weight: bold; margin-top: 1rem;">Volume &nbsp; &nbsp;</h1>
         <h1 style="font-size: 90px; margin-top: -0.6em; margin-left: 4em;">1/{{volume.QTD}}</h1>
         </div>
     <div class="redes">
         <h1 class="spin" >{{data | date: "dd/MM/yyyy"}} </h1>
-        <p class="spin" style="font-size: 24px;">Siga nossas redes sociais:</p>
-        <h3 class="spin">&#64;montannadistribuidora</h3>
+        <h3 class="spin">&#64;guijaeke</h3>
+        <p class="spin" style="font-size: 24px;">Siga minhas redes sociais</p>
     </div>
 </div>
