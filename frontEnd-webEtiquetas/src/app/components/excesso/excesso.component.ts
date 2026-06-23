@@ -22,7 +22,7 @@ export class ExcessoComponent {
       word: [],
       select: []
     })
-    this.catchLocs('')
+    this.catchLocs('a')
     this.setor = this.setorService.OnInit()
   }
   onKeyUp() {
