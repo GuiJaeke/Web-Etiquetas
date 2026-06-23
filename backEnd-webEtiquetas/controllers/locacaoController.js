@@ -5,12 +5,12 @@ const { exec } = require('child_process');
 const path = require('path');
 const moment = require('moment')
 const getSetor = require('../utils/getSetor')
-const buscarItens = require('../utils/buscarItens')
+const buscarIten = require('../utils/buscarItens').buscarIten
 
 module.exports = class locacaoController {
     static async FindItem(req, res) {
-        const { codigo, filial } = req.params
-        const Item = await buscarItens(codigo)
+        const { codigo} = req.params
+        const Item = await buscarIten(codigo)
 
         res.json(Item)
     }

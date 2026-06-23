@@ -69,8 +69,8 @@ export class EtiquetasService {
   //fim
 
   //Etiqueta locação
-  preencher(codigo: string, filial: number) {
-    return this.http.get<item>(`${this.apiUrl}/locacao/${codigo}/${filial}`)
+  preencher(codigo: string) {
+    return this.http.get<item>(`${this.apiUrl}/locacao/${codigo}`)
   }
   locacaoETQ(codigo: string, filial: number, setor: string | null) {
     this.snackBar.open(`Etiqueta impressa com sucesso!`, 'Fechar', { duration:3000});

@@ -18,6 +18,18 @@ async function buscarItens(codint, limit) {
         return(item)
     }
 }
+async function buscarIten(codint) {
+    const item = (await sequelizeBditens.query(`SELECT PRODUTO.codinterno, PRODUTO.descricao as descr, PRODUTO.modelo, PRODUTO.codfabricante
+        as codfor, produto.locfisica as tloc, produto.qnt as disponivel from PRODUTO PRODUTO
+        WHERE PRODUTO.codinterno LIKE '${codint}%' or PRODUTO.codfabricante LIKE '${codint}'`))[0][0];
+    if (item == undefined) {
+        console.log(item)
+    } else {
+        console.log(item);
+        
+        return(item)
+    }
+}
 async function buscarItensDescr(descr) {
     const item = (await sequelizeBditens.query(`SELECT PRODUTO.codinterno, PRODUTO.descricao as descr, PRODUTO.modelo, PRODUTO.codfabricante
         as codfor, produto.locfisica as tloc, produto.qnt as disponivel from PRODUTO PRODUTO
@@ -40,4 +52,4 @@ async function buscarPedido(numped) {
     }
 }
 
-module.exports = { buscarItens, buscarItensDescr, buscarPedido };
+module.exports = { buscarItens, buscarItensDescr, buscarPedido, buscarIten };

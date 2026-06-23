@@ -1,7 +1,6 @@
 <form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="form-container">
     <label for="numped">Código do item e a Filial</label>
     <input type="text" class="input-field" formControlName="codigo" id="codigo" (keyup)="onKeyup()">
-    <input type="number" class="input-field" formControlName="filial" id="" >
     <button type="submit"  class="submit-button">PREENCHER</button>
     
 </form>

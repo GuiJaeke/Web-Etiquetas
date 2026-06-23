@@ -25,7 +25,7 @@ export class LocacaoOrleonComponent {
         this.setor = this.setorService.OnInit()
       }
       onSubmit() {
-        this.etqService.preencher(this.itemForm.value.codigo, this.itemForm.value.filial).subscribe((Item) => {
+        this.etqService.preencher(this.itemForm.value.codigo).subscribe((Item) => {
           if (Item) {
             this.item = Item
           } else {

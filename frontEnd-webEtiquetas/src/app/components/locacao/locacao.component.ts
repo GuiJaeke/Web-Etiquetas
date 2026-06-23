@@ -20,14 +20,14 @@ export class LocacaoComponent {
 
   constructor(private fb: FormBuilder, private etqService: EtiquetasService, private setorService: SetorService, private snackBar: MatSnackBar) {
     this.itemForm = this.fb.group({
-      codigo: [],
-      filial: [60]
+      codigo: []
     })
     this.setor = this.setorService.OnInit()
   }
   onSubmit() {
-    this.etqService.preencher(this.itemForm.value.codigo, this.itemForm.value.filial).subscribe((Item) => {
+    this.etqService.preencher(this.itemForm.value.codigo).subscribe((Item) => {
       if (Item) {
+        console.log(Item)
         this.item = Item
       } else {
         this.snackBar.open(`Item não encontrado`, 'Fechar', { duration:3000});
