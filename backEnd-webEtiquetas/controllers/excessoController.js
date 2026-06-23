@@ -8,7 +8,7 @@ const getSetor = require('../utils/getSetor')
 module.exports = class excessoController {
     static async getAllLocs(req, res) {
         const word = req.params.word
-        const locs = (await sequelize.query(`SELECT descr AS loc FROM TABLOCACAD WHERE descr LIKE '${word}%' ORDER BY descr ASC`))[0]
+        const locs = (await sequelize.query(`SELECT * FROM loc WHERE loc LIKE '${word}%' ORDER BY loc ASC`))[0]
         res.json(locs)
     }
     static async printLocs(req, res) {
