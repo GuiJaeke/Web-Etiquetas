@@ -4,6 +4,6 @@ export interface item {
     modelo: string
     NOME: string
     descr: string
-    clasloc: string
-    CODPROFABRICANTE: string
+    tloc: string
+    codfor: string
 }
