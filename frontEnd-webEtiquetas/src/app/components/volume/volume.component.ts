@@ -73,7 +73,6 @@ export class VolumeComponent {
       next: (pedido) => {
 
         if (pedido) {
-          console.log(pedido)
           this.volume = pedido
 
         } else {

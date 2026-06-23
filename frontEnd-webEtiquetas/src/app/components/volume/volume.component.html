@@ -42,8 +42,9 @@
     <h1 style="font-size: 170px;">{{volume.numped}}</h1>
     <h1 class="date">{{data | date: "dd/MM/yyyy"}} </h1>
     <h1>{{volume.RUA}}, {{volume.NUMERO}}</h1>
-    <h1>{{volume.SIGLA}} - {{volume.CIDADE}} &nbsp; &nbsp; &nbsp; &nbsp; {{volume.TRANSPORTADORA}}</h1>
-    <h1 style=" margin-left: 15rem; font-size: 40px; font-weight: bold; margin-top: 2rem;">Volume &nbsp; &nbsp;
+    <h1>{{volume.BAIRRO}}, {{volume.CIDADE}}-{{volume.SIGLA}}, CEP {{volume.CEP}} &nbsp; &nbsp; &nbsp; &nbsp;</h1>
+    <h1>Transportadora: {{volume.TRANSPORTADORA}}</h1>
+    <h1 style=" margin-left: 15rem; font-size: 40px; font-weight: bold; margin-top: 0.75rem;">Volume &nbsp; &nbsp;
         1/{{volume.QTD}}</h1>
 </div>
 
